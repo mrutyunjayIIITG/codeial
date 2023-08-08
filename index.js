@@ -1,13 +1,18 @@
 const express=require('express');
+const router = require('./routes');
 const app=express();
 const port = 9000;
 
+// use express router 
+app.use('/',require('./routes'));
 
 
 
+router.get('/')
 
 
 
+ 
 
 
 
