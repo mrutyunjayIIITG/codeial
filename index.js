@@ -19,6 +19,7 @@ router.get('/')
 
 app.listen(port,(err)=>{
     if(err){
+        // interpolation :embeded of varible can be done inside a string:
         console.log(`error in running the server :${err}`)
     }
     console.log(`server running succesfully at ${port}`)
