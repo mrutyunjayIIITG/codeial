@@ -13,7 +13,9 @@ app.use(expressLayouts);
 app.use(express.static('./assets'));
 
 
-
+// database connect
+const connectDB = require('./config/mongoose');
+connectDB();
 // use express router 
 app.use('/',require('./routes')); //use for any request
 
