@@ -4,6 +4,16 @@ const path = require('path');
 const app=express();
 const port = 9000;
 
+//ejs layout calling 
+const expressLayouts=require('express-ejs-layouts');
+
+app.use(expressLayouts);
+
+//access stataic file 
+app.use(express.static('./assets'));
+
+
+
 // use express router 
 app.use('/',require('./routes')); //use for any request
 
