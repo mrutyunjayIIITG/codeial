@@ -1,8 +1,10 @@
 const express=require('express');
 const router = require('./routes');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const app=express();
 const port = 9000;
+const bodyParser = require('body-parser');
 
 //ejs layout calling 
 const expressLayouts=require('express-ejs-layouts');
@@ -13,11 +15,22 @@ app.use(expressLayouts);
 app.use(express.static('./assets'));
 
 
+app.use(bodyParser.urlencoded({ extended: true }));
 // database connect
 const connectDB = require('./config/mongoose');
 connectDB();
 // use express router 
 app.use('/',require('./routes')); //use for any request
+
+
+app.use(express.urlencoded);
+// for cookies
+app.use(cookieParser());
+
+//
+
+
+
 
 
 
